@@ -19,7 +19,7 @@ function next(){
         clear();
    }
    if(ALLOW_NEXT){
-   pageNumber = pageNumber ++;
+   ++pageNumber;
    change(document.getElementById('searchId').value);
    }
 }
@@ -29,7 +29,7 @@ function previous(){
         clear();
    }
    if(pageNumber != 0 ){
-   pageNumber = pageNumber --;
+   --pageNumber;
    change(document.getElementById('searchId').value);
    }
 }
