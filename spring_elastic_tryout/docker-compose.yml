@@ -1,0 +1,22 @@
+version: '2.2'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.7.2
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=elasticsearch
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  spring_elastic_tryout:
+    image: spring_elastic_tryout
+    container_name: spring_elastic_tryout
+    ports:
+      - 8080:8080
+    depends_on:
+      - es01
+
+
